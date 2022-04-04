@@ -1,0 +1,12 @@
+<p>newsheadlines works!</p>
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let n of newsheadlinesDisplay" class="col-lg-3">
+            <img src="{{ n.urlToImage }}" alt="" width="100%">
+            <h5>{{ n.title }}</h5>
+            <p>{{ n.content }}</p>
+            <a href="{{ n.url }}">Go to page</a>
+        </div>
+    </div>
+</div>
