@@ -4,7 +4,7 @@ A News App for Nalagenetics Front-End Coding Test
 
 ## Requirements
 
-- The news app should be able to fetch content from the “News API” service with any of the following parameters:
+- The news app should be able to fetch content from the “News API” service with any of gitthe following parameters:
     ○ Country
     ○ Category
     ○ Keyword
