@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NewsapiservicesService } from './service/newsapiservices.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header/header.component';
 import { NewsheadlinesComponent } from './newsheadlines/newsheadlines.component';
@@ -19,7 +20,8 @@ import { NewsheadlinesComponent } from './newsheadlines/newsheadlines.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [NewsapiservicesService],
   bootstrap: [AppComponent]
