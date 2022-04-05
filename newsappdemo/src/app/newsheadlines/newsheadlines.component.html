@@ -1,6 +1,6 @@
 <!-- Search bar -->
 <div class="container">
-    <form [formGroup]="searchForm" (ngSubmit)="submit()">
+    <form [formGroup]="searchForm" (ngSubmit)="OnSubmit()">
         <p>
             <select formControlName="country">
                 <option [ngValue]="null" disabled>Select Country</option>
