@@ -12,6 +12,8 @@
                 <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
             </select>
     
+            <input formControlName="keyword" type="text" placeholder="Keyword..">
+
             <button type="submit">Submit</button>
         </p>
     </form>
@@ -19,7 +21,7 @@
 
 <!-- News will be displayed here -->
 <div class="grid-container">
-    <div *ngFor="let n of newsheadlinesDisplay" class="grid-item">
+    <div *ngFor="let n of news | keyword:keyword" class="grid-item">
         <img src="{{ n.urlToImage }}" alt="" width="100%">
         <h5>{{ n.title }}</h5>
         <p>{{ n.author}}</p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NewsapiservicesService } from '../service/newsapiservices.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   selector: 'app-newsheadlines',
@@ -8,6 +9,8 @@ import { NewsapiservicesService } from '../service/newsapiservices.service';
   styleUrls: ['./newsheadlines.component.scss']
 })
 export class NewsheadlinesComponent implements OnInit {
+
+  keyword = "";
 
   //Variables for Url string concat (Default country is Philippines)
   countryId = "ph";
@@ -39,7 +42,7 @@ export class NewsheadlinesComponent implements OnInit {
   ]
 
   //Display News Array
-  newsheadlinesDisplay:any = [];
+  news:any = [];
 
   constructor(
     private _services:NewsapiservicesService,
@@ -49,19 +52,20 @@ export class NewsheadlinesComponent implements OnInit {
   ngOnInit(): void {
     this.searchForm = this.fb.group({
       country: [null],
-      category: [null]
+      category: [null],
+      keyword: ''
     });
 
     this._services.newsHeadlines(this.countryId, this.categoryId).subscribe((result)=>{
       console.log(result);
-      this.newsheadlinesDisplay = result.articles;
+      this.news = result.articles;
     })
   }
 
   OnSubmit() {
     //To validate Id values
     console.log("Form Submitted")
-    console.log(this.searchForm.value) 
+    console.log(this.searchForm.value, this.searchForm.get('keyword'))
 
     if(this.searchForm.get('country').value == 1) this.countryId = "ph";
     else if(this.searchForm.get('country').value == 2) this.countryId = "us";
@@ -81,9 +85,11 @@ export class NewsheadlinesComponent implements OnInit {
     else if(this.searchForm.get('category').value == 7) this.categoryId = "sports";
     else if(this.searchForm.get('category').value == 8) this.categoryId = "technology";
 
+    this.keyword = this.searchForm.get('keyword').value;
+
     this._services.newsHeadlines(this.countryId, this.categoryId).subscribe((result)=>{
       console.log(result);
-      this.newsheadlinesDisplay = result.articles;
+      this.news = result.articles;
     })
   }
 }
