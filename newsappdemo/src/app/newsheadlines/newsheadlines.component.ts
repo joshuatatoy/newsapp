@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NewsapiservicesService } from '../service/newsapiservices.service';
 import { Pipe, PipeTransform } from '@angular/core';
@@ -10,6 +10,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NewsheadlinesComponent implements OnInit {
 
+  @ViewChildren('totalResults') totalResultsInDom: any;
   keyword = "";
 
   //Variables for Url string concat (Default country is Philippines)

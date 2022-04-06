@@ -20,13 +20,14 @@
 </div>
 
 <!-- News will be displayed here -->
+<span>You have {{ (totalResultsInDom)?.length }} search results</span>
 <div class="grid-container">
-    <div *ngFor="let n of news | keyword:keyword" class="grid-item">
+    <div #totalResults *ngFor="let n of news | keyword:keyword" class="grid-item">
         <img src="{{ n.urlToImage }}" alt="" width="100%">
         <h5>{{ n.title }}</h5>
         <p>{{ n.author}}</p>
         <p>{{ n.publishedAt }}</p>
         <p>{{ n.content }}</p>
-        <a href="{{ n.url }}" class="button button2">Go to page</a>
+        <a href="{{ n.url }}" class="urlButton urlButton2">Go to page</a>
     </div>
 </div>
