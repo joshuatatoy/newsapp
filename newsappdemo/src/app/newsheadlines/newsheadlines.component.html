@@ -1,33 +1,39 @@
 <!-- Search bar -->
 <div class="container">
     <form [formGroup]="searchForm" (ngSubmit)="OnSubmit()">
-        <p>
-            <select formControlName="country">
-                <option [ngValue]="null" disabled>Select Country</option>
-                <option *ngFor="let country of countries" [ngValue]="country.id">{{ country.name }}</option>
-            </select>
+        <select class="select" formControlName="country">
+            <option [ngValue]="null" disabled>Select Country</option>
+            <option *ngFor="let country of countries" [ngValue]="country.id">{{ country.name }}</option>
+        </select>
 
-            <select formControlName="category">
-                <option [ngValue]="null" disabled>Select Category</option>
-                <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
-            </select>
-    
-            <input formControlName="keyword" type="text" placeholder="Keyword..">
+        <select class="select" formControlName="category">
+            <option [ngValue]="null" disabled>Select Category</option>
+            <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+        </select>
 
-            <button type="submit">Submit</button>
-        </p>
+        <input class="input" formControlName="keyword" type="text" placeholder="Keyword..">
+
+        <button class="submit" type="submit">Search</button>
     </form>
 </div>
 
 <!-- News will be displayed here -->
-<span>You have {{ (totalResultsInDom)?.length }} search results</span>
+<div>
+    <p class="resultsCount">You have {{ (totalResultsInDom)?.length }} search results</p>
+</div>
 <div class="grid-container">
     <div #totalResults *ngFor="let n of news | keyword:keyword" class="grid-item">
-        <img src="{{ n.urlToImage }}" alt="" width="100%">
-        <h5>{{ n.title }}</h5>
-        <p>{{ n.author}}</p>
-        <p>{{ n.publishedAt }}</p>
-        <p>{{ n.content }}</p>
-        <a href="{{ n.url }}" class="urlButton urlButton2">Go to page</a>
+        <img class="image" src="{{ n.urlToImage }}">
+        <div>
+            <h2 class="title">{{ n.title }}</h2>
+        </div>
+        <div>
+            <p class="author">{{ n.author}}</p>
+            <p class="date">{{ n.publishedAt }}</p>
+            <p class="content">{{ n.content }}</p>
+        </div>
+        <div>
+            <a href="{{ n.url }}" class="urlButton">Go to page</a>
+        </div>
     </div>
 </div>
