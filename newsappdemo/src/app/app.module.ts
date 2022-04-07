@@ -17,7 +17,7 @@ import { KeywordPipe } from './Pipes/keyword.pipe';
     AppComponent,
     HeaderComponent,
     NewsheadlinesComponent,
-    KeywordPipe
+    KeywordPipe,
   ],
   imports: [
     BrowserModule,

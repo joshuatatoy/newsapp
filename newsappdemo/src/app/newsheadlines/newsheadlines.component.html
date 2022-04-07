@@ -24,16 +24,10 @@
 <div class="grid-container">
     <div #totalResults *ngFor="let n of news | keyword:keyword" class="grid-item">
         <img class="image" src="{{ n.urlToImage }}">
-        <div>
-            <h2 class="title">{{ n.title }}</h2>
-        </div>
-        <div>
-            <p class="author">{{ n.author}}</p>
-            <p class="date">{{ n.publishedAt }}</p>
-            <p class="content">{{ n.content }}</p>
-        </div>
-        <div>
-            <a href="{{ n.url }}" class="urlButton">Go to page</a>
-        </div>
+        <h2 class="title">{{ n.title }}</h2>
+        <p class="source">{{ n.source.name }}</p>
+        <p class="date">Published: {{ n.publishedAt | slice:0:10 }}</p>
+        <p class="content">{{ n.content | slice:0:200}}</p>
+        <a href="{{ n.url }}" class="itemButton">Go to page</a>
     </div>
 </div>

@@ -34,11 +34,17 @@
 
 /*------------TOGGLE SWITCH---------------*/
 /* The switch - the box around the slider */
+.switch-container {
+  float: right;
+  position: relative;
+  bottom: 50%;
+}
+
 .switch {
-position: relative;
-display: inline-block;
-width: 60px;
-height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
@@ -59,6 +65,7 @@ height: 34px;
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  border-radius: 34px;
 }
 
 .slider:before {
@@ -71,10 +78,11 @@ height: 34px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #000000;
 }
 
 input:focus + .slider {
@@ -87,11 +95,22 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
+/* Media Browser*/
+@media (max-width: 500px) {
+  .topnav a {
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Helvetica, Arial, sans-serif;
+    position: relative;
+    left: 25%;
+  }
 
-.slider.round:before {
-  border-radius: 50%;
+  /* Right-aligned section inside the top navigation */
+  .topnav-right {
+    position: relative;
+    right: 36%;
+  }
 }

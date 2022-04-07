@@ -54,22 +54,24 @@
 .grid-container {
     display: grid;
     background-color: #ffffff00;
-    grid-template-columns: repeat(auto-fit, 20rem);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, 20rem); //Starts at 1 grid column and repeats
+    grid-template-rows: 0.8fr;
+    grid-auto-rows: 0.8fr; //Fixed grid row height
+    grid-gap: 2rem; //Gap between each grid item is fixed
     justify-content: center;
 }
 
 .grid-item {
     overflow: hidden;
-    box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
     background-color: #f8f8f8cc;
     border: 1px solid #c5c5c5cc;
-    text-align: center;
+    box-shadow: 0px 2px 8px 0px #888888;
+    //margin: 0.5rem;
     position: relative;
-    margin: 0.5rem;
 }
 
 @media (min-width: 900px) {
+    //If screensize more than 900px, it's fixed at maximum of 3 grid columns
     .grid-container { grid-template-columns: 20rem 20rem 20rem; }
 }
 
@@ -81,30 +83,55 @@
 
 .title {
     font-weight: bold;
-    font-size: 1.0rem;
+    font-size: 0.9rem;
+    text-align: center;
+    text-align: justify;
+    padding: 0px 13px;
+}
+
+.source {
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+    text-align: justify;
+    padding: 0px 13px;
+}
+
+.date {
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+    text-align: justify;
+    padding: 0px 13px;
 }
 
 .content {
-    margin: 1rem 2rem;
     font-size: 0.9rem;
+    text-align: center;
+    text-align: justify;
+    padding: 0px 13px;
 }
 
-.urlButton {
+.itemButton {
     background-color: #3d3d3d; 
     border: none;
     color: white;
     width: 100%;
-    padding: 6px;
+    padding: 0.7rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 0.9rem;
-    margin: 4px 2px;
+    font-weight: bold;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;   
 }
 
-.urlButton:hover {
+.itemButton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
