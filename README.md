@@ -5,7 +5,7 @@ A News App for Nalagenetics Front-End Coding Test
 ## Requirements
 
 - The news app should be able to fetch content from the “News API” service with any of the following parameters:
-    ○ Country
+    1.Country
     ○ Category
     ○ Keyword
 - Default country selected should be “Philippines”
