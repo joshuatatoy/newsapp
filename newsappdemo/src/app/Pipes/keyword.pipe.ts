@@ -3,7 +3,6 @@ import { stringify } from 'querystring';
 
 @Pipe({
   name: 'keyword',
-  //pure: false
 })
 export class KeywordPipe implements PipeTransform {
   

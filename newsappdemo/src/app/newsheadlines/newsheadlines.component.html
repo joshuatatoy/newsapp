@@ -3,15 +3,29 @@
     <form [formGroup]="searchForm" (ngSubmit)="OnSubmit()">
         <select class="select" formControlName="country">
             <option [ngValue]="null" disabled>Select Country</option>
-            <option *ngFor="let country of countries" [ngValue]="country.id">{{ country.name }}</option>
+            <option *ngFor="let country of countries" 
+                    [ngValue]="country.id">
+                    {{ country.name }}
+            </option>
         </select>
+
+        <br class="br">
 
         <select class="select" formControlName="category">
             <option [ngValue]="null" disabled>Select Category</option>
-            <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+            <option *ngFor="let category of categories" 
+                    [ngValue]="category.id">
+                    {{ category.name }}</option>
         </select>
 
-        <input class="input" formControlName="keyword" type="text" placeholder="Keyword..">
+        <br class="br">
+
+        <input class="input" 
+               formControlName="keyword" 
+               type="text" 
+               placeholder="Keyword..">
+               
+        <br class="br">
 
         <button class="submit" type="submit">Search</button>
     </form>

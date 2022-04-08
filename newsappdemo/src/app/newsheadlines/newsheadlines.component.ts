@@ -10,7 +10,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NewsheadlinesComponent implements OnInit {
 
+  //To fetch search results count
   @ViewChildren('totalResults') totalResultsInDom: any;
+
+  //Set keyword default to an empty string
   keyword = "";
 
   //Variables for Url string concat (Default country is Philippines)
@@ -66,7 +69,8 @@ export class NewsheadlinesComponent implements OnInit {
   OnSubmit() {
     //To validate Id values
     console.log("Form Submitted")
-    console.log(this.searchForm.value, this.searchForm.get('keyword'))
+    console.log(this.searchForm.value, 
+                this.searchForm.get('keyword'))
 
     if(this.searchForm.get('country').value == 1) this.countryId = "ph";
     else if(this.searchForm.get('country').value == 2) this.countryId = "us";

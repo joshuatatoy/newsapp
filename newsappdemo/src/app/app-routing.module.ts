@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewsheadlinesComponent } from './newsheadlines/newsheadlines.component';
 
 const routes: Routes = [
-  {path:'', component:NewsheadlinesComponent}, // Home
+  {path:'', component:NewsheadlinesComponent}, //Home
 ];
 
 @NgModule({
